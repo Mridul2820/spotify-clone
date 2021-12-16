@@ -9,7 +9,7 @@ const SideBar = () => {
     console.log(status)
 
     return (
-        <div className="text-gray-500 p-5 text-sm">
+        <div className="text-gray-500 text-sm border-r border-gray-900 h-screen">
             <TopBar />
             <PlayList/>
         </div>

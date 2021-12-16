@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import SideBar from '../components/SideBar/SideBar'
+import Center from '../components/center/Center'
+import SideBar from '../components/sidebar/SideBar'
 
 const Home = () => {
     return (
@@ -9,9 +10,9 @@ const Home = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main>
+            <main className='flex'>
                 <SideBar />
-                {/* Center */}
+                <Center />
             </main>
             <div>
                 {/* Player */}
