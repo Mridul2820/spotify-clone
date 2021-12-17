@@ -25,10 +25,11 @@ const CenterMain = () => {
     }, [playlistId])
 
     useEffect(() => {
-        spotifyApi.getPlaylist(playlistId).then(data => {
-            setPlaylist(data.body)
-        }).catch(err => console.log("Something Went wrong", err))
-    }, [spotifyApi, playlistId])
+        if(spotifyApi.getAccessToken()){
+            spotifyApi.getPlaylist(playlistId)
+            .then(({body}) => setPlaylist(body))
+        }
+    }, [playlistId])
 
     console.log("playlist", playlist)
 
