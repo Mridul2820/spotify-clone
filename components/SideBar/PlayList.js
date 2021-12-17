@@ -18,7 +18,7 @@ const PlayList = () => {
         }
     }, [session, spotifyApi])
 
-    console.log(playlists)
+    // console.log("playlists", playlists)
 
     return (
         <div className="space-y-4 ml-5 pb-5 h-[calc(100vh-274px)] overflow-y-scroll scrollbar-hide">
