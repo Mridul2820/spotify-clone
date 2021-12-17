@@ -5,7 +5,8 @@ const Login = ({ providers }) => {
     return (
         <div className="flex flex-col items-center bg-black min-h-screen w-full justify-center">
             <img 
-                src="/assets/spotify-logo.png" 
+                // src="assets/spotify-logo.png" 
+                src="https://www.freepnglogos.com/uploads/spotify-logo-png/spotify-download-logo-30.png" 
                 alt="spotify"
                 className="h-40 mb-5"
             />

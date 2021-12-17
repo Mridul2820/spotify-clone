@@ -7,7 +7,7 @@ const SideBar = () => {
     const { data: session, status} = useSession()
 
     return (
-        <div className="text-gray-500 text-sm border-r border-gray-900 h-screen">
+        <div className="text-gray-500 text-sm border-r border-gray-900 h-screen pr-5">
             <TopBar />
             <PlayList/>
         </div>

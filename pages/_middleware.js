@@ -12,12 +12,8 @@ export async function middleware(req){
         return NextResponse.next()
     }
 
-    if(token && pathname !== '/'){
-        return NextResponse.redirect('/')
-    }
-
     // Protected Routes
-    if(!token && pathname !== 'login' ){
+    if(!token && pathname !== '/login' ){
         return NextResponse.redirect('/login')
     }
 }

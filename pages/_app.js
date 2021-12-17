@@ -3,7 +3,7 @@ import 'tailwindcss/tailwind.css'
 
 function MyApp({ Component, pageProps: {session, ...pageProps} }) {
     return (
-        <SessionProvider>
+        <SessionProvider session={session}>
             <Component {...pageProps} />
         </SessionProvider>
     )

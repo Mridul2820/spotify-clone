@@ -7,7 +7,7 @@ const refreshAccessToken = async(token) => {
         spotifyApi.setAccessToken(token.accessToken)
         spotifyApi.setRefreshToken(token.refreshToken)
 
-        const { body: refreshedToken } = await spotifyApi.setRefreshToken()
+        const { body: refreshedToken } = await spotifyApi.refreshAccessToken()
 
         return {
             ...token,
@@ -19,7 +19,7 @@ const refreshAccessToken = async(token) => {
     } catch (error) {
         return {
             ...token,
-            error: 'RefreshAccessTokenError'
+            error: "RefreshAccessTokenError"
         }
     }
 }
@@ -60,7 +60,7 @@ export default NextAuth({
             return await refreshAccessToken(token)
         },
 
-        async sessionStorage({ session, token }){
+        async session({ session, token }){
             session.user.accessToken = token.accessToken;
             session.user.refreshToken = token.refreshToken;
             session.user.username = token.username;
