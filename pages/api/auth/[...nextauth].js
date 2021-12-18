@@ -2,17 +2,17 @@ import NextAuth from "next-auth"
 import SpotifyProvider from "next-auth/providers/spotify"
 import spotifyApi, { LOGIN_URL } from "../../../lib/spotify"
 
-const refreshAccessToken = token => {
+const refreshAccessToken = async(token) => {
     try {
         spotifyApi.setAccessToken(token.accessToken)
         spotifyApi.setRefreshToken(token.refreshToken)
 
-        const { body: refreshedToken } = spotifyApi.refreshAccessToken()
+        const { body: refreshedToken } = await spotifyApi.refreshAccessToken()
 
         return {
             ...token,
             accessToken: refreshedToken.access_token,
-            accessTokenExpires: refreshedToken.expires_in * 1000,
+            accessTokenExpires: Date.now() + refreshedToken.expires_in * 1000,
             refreshToken: refreshedToken.refresh_token ?? token.refresh_token
         }
         

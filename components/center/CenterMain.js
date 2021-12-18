@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { shuffle } from 'lodash'
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { playlistAtom, playlistIdState } from '../../atoms/playlistAtom';
+import { playlistState, playlistIdState } from '../../atoms/playlistAtom';
 import useSpotify from '../../hooks/useSpotify';
 
 const CenterMain = () => {
     const [color, setColor] = useState(null);
     const spotifyApi = useSpotify()
     const playlistId = useRecoilValue(playlistIdState)
-    const [ playlist, setPlaylist ] = useRecoilState(playlistAtom)
+    const [ playlist, setPlaylist ] = useRecoilState(playlistState)
 
     const colors = [
         "from-indigo-500",
@@ -30,8 +30,6 @@ const CenterMain = () => {
             .then(({body}) => setPlaylist(body))
         }
     }, [playlistId])
-
-    console.log("playlist", playlist)
 
     return (
         <section className={`flex items-end space-x-7 bg-gradient-to-b to-black ${color} h-80 text-white p-8`}>

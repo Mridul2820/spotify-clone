@@ -6,7 +6,7 @@ import useSpotify from '../../hooks/useSpotify'
 
 const PlayList = () => {
     const spotifyApi = useSpotify()
-    const { data: session, status} = useSession()
+    const { data: session } = useSession()
     const [playlists, setPlaylists] = useState([])
     const [playlistId, setPlaylistId] = useRecoilState(playlistIdState)
     
