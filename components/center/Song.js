@@ -1,10 +1,10 @@
 import { truncate } from 'lodash';
 import React from 'react'
-import useSpotify from '../../hooks/useSpotify'
+// import useSpotify from '../../hooks/useSpotify'
 import CountDuration from '../../lib/CountDuration';
 
 const Song = ({ track, order, added_at }) => {
-    const spotifyApi = useSpotify()
+    // const spotifyApi = useSpotify()
     let DateFormat = { month: 'short', day: '2-digit', year: "numeric" };
 
     return (
