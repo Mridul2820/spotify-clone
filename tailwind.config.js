@@ -6,7 +6,8 @@ module.exports = {
         extend: {
             gridTemplateColumns: {
                 // Song list grid columns
-               'gridsong': '16px 6fr 4fr 3fr minmax(120px, 1fr)',
+               'gridsong': '16px 6fr 4fr 3fr minmax(80px, 1fr)',
+               'gridsongsm': '6fr 40px',
             }
         },
     },

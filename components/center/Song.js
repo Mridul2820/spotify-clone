@@ -1,40 +1,42 @@
+import { truncate } from 'lodash';
 import React from 'react'
 import useSpotify from '../../hooks/useSpotify'
+import CountDuration from '../../lib/CountDuration';
 
 const Song = ({ track, order, added_at }) => {
     const spotifyApi = useSpotify()
-    let options = { month: 'short', day: '2-digit', year: "numeric" };
+    let DateFormat = { month: 'short', day: '2-digit', year: "numeric" };
 
     return (
         <div>
-            <div className="grid gap-4 grid-cols-1 md:grid-cols-gridsong items-center space-x-4 px-3">
+            <div className="grid gap-5 grid-cols-gridsongsm md:grid-cols-gridsong items-center px-0 sm:px-3 h-14 hover:bg-[#ffffff1a] rounded-md">
                 <p className="hidden md:block">{order + 1}</p>
-                <div className="flex items-center">
+                <div className="inline-flex items-center">
                     <img 
                         src={track.album.images[0].url}
                         alt={track.name}
                         className="w-10 mr-4"
                     />
                     <div>
-                        <p className="text-[16px]">{track.name}</p>
+                        <p className="text-[16px] whitespace-nowrap">{truncate(track.name, { 'length': 35 })}</p>
                         <p className="text-[14px] text-gray-400">
-                        {track.artists
-                            .map(artist => <React.Fragment key={artist.id}>{artist.name}</React.Fragment>)
-                            .reduce((prev, curr) => [prev, ', ', curr])
-                        }
+                        {truncate(track.artists
+                            .map(artist => {return artist.name})
+                            .join(", ")
+                        )}
                         </p>
                     </div>
                 </div>
                 <div className="hidden md:block">
-                    <p className="text-[14px] text-gray-400">{track.album.name}</p>
+                    <p className="text-[14px] text-gray-400">{truncate(track.album.name, { 'length': 35 })}</p>
                 </div>
 
                 <div className="hidden md:block">
-                    <p className="text-[14px] text-gray-400">{new Date(added_at).toLocaleDateString("en-US", options)}</p>
+                    <p className="text-[14px] text-gray-400">{new Date(added_at).toLocaleDateString("en-US", DateFormat)}</p>
                 </div>
 
-                <div className="hidden md:block">
-                    <p className="text-[14px] text-gray-400">Duration</p>
+                <div className="block">
+                    <p className="text-[14px] text-gray-400">{CountDuration(track.duration_ms)}</p>
                 </div>
             </div>
         </div>

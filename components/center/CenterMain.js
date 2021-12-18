@@ -32,7 +32,7 @@ const CenterMain = () => {
     }, [playlistId])
 
     return (
-        <section className={`flex items-end space-x-7 bg-gradient-to-b to-black ${color} h-80 text-white p-8`}>
+        <section className={`flex items-end space-x-7 bg-gradient-to-b to-[#121212] ${color} h-80 text-white p-8`}>
             <img 
                 src={playlist?.images[0]?.url} 
                 alt={playlist?.name} 
