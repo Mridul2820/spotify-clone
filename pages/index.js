@@ -1,7 +1,7 @@
 import { getSession } from 'next-auth/react'
 import Head from 'next/head'
 import Center from '../components/center/Center'
-import SideBar from '../components/sidebar/SideBar'
+// import SideBar from '../components/sidebar/SideBar'
 
 const Home = () => {
     return (
@@ -12,7 +12,7 @@ const Home = () => {
             </Head>
 
             <main className='flex'>
-                <SideBar />
+                {/* <SideBar /> */}
                 <Center />
             </main>
             <div>
