@@ -6,6 +6,7 @@ import { BsFillPlayCircleFill } from 'react-icons/bs'
 import { RiPauseCircleFill } from 'react-icons/ri'
 import CountDuration from '../../lib/CountDuration'
 import useSpotify from '../../hooks/useSpotify'
+import styled from 'styled-components'
 
 const PlayAction = ({ songInfo, isPlaying, setIsPlaying }) => {
     const spotifyApi = useSpotify()
@@ -51,13 +52,64 @@ const PlayAction = ({ songInfo, isPlaying, setIsPlaying }) => {
             </div>
             <div className="text-[#b3b3b3] flex items-center justify-between w-full">
                 <span className="text-[12px] mx-1">0:00</span>
-                <div 
-                    className="w-full h-1 mx-1 relative rounded-full bg-[#535353] after:absolute after:left-0 after:w-[50%] after:pseudo-content-comma after:h-1 after:bg-[#1db954] after:rounded-full cursor-pointer after:cursor-pointer"
+                <CustomInput 
+                    // value={volume}
+                    // volume={volume}
+                    min={0} 
+                    max={100} 
+                    type="range"
+                    className={`appearance-none max-w-[410px] w-[100%] h-1 mx-1 relative bg-[#535353] rounded-full outline-none focus:outline-none after:h-1 cursor-pointer`}
+                    // onChange={(e) => setVolume(e.target.value)}
                 />
                 <span className="text-[12px] mx-1">{songInfo.duration_ms ? CountDuration(songInfo.duration_ms) : "0:00"}</span>
             </div>
         </div>
     )
 }
+
+const CustomInput = styled.input`
+    &:hover {
+        &:after {
+            background: #1db954;
+        }
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        height: 4px;
+        background: #b3b3b3;
+        cursor: pointer;
+        /* width: ${({volume}) => volume + "%"}; */
+        z-index: 2;
+
+        &:hover {
+            background: #1db954;
+        }
+    }
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        background-color: #1db954;
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        box-shadow: 2px 4px 4px rgba(0, 0, 0, .5);
+        position: relative;
+        z-index: 3;
+    }
+    
+    &::-moz-range-thumb {
+        -webkit-appearance: none;
+        background-color: #1db954;
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        box-shadow: 2px 4px 4px rgba(0, 0, 0, .5);
+        position: relative;
+        z-index: 3;
+    }
+`
 
 export default PlayAction
