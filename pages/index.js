@@ -1,6 +1,7 @@
 import { getSession } from 'next-auth/react'
 import Head from 'next/head'
 import Center from '../components/center/Center'
+import Player from '../components/play/Player'
 import SideBar from '../components/sidenav/SideBar'
 
 const Home = () => {
@@ -14,8 +15,8 @@ const Home = () => {
                 <SideBar />
                 <Center />
             </main>
-            <div>
-                {/* Player */}
+            <div className="sticky bottom-0">
+                <Player />
             </div>
         </div>
     )

@@ -1,11 +1,11 @@
 import { atom } from "recoil";
 
 export const currentSongIdState = atom({
-    key: 'CurrentSongIdState',
+    key: 'currentSongIdState',
     default: null
 })
 
 export const isPlayingState = atom({
-    key: 'IsPlayingState',
+    key: 'isPlayingState',
     default: false
 })
