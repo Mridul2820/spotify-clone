@@ -1,9 +1,13 @@
 import React from 'react'
 import { getProviders, signIn } from 'next-auth/react'
+import Head from 'next/head'
 
 const Login = ({ providers }) => {
     return (
         <div className="flex flex-col items-center bg-black min-h-screen w-full justify-center">
+            <Head>
+                <title>Spotify Clone Login</title>
+            </Head>
             <img 
                 // src="assets/spotify-logo.png" 
                 src="https://www.freepnglogos.com/uploads/spotify-logo-png/spotify-download-logo-30.png" 
