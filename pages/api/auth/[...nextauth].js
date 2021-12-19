@@ -32,7 +32,6 @@ export default NextAuth({
             clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
             authorization: LOGIN_URL
         }),
-        // ...add more providers here
     ],
     secret: process.env.JWT_SECRET,
     site: process.env.NEXTAUTH_URL,
@@ -52,7 +51,7 @@ export default NextAuth({
                     ...user
                 }
             }
-
+    
             // Return previous token if the access token has not expired yet
             if(Date.now() < token.accessTokenExpires){
                 return token
@@ -62,12 +61,11 @@ export default NextAuth({
             return await refreshAccessToken(token)
         },
 
-        async session({ session, token }){
-            session.user.accessToken = token.accessToken;
-            session.user.refreshToken = token.refreshToken;
-            session.user.username = token.username;
-
-            return session
+        async session({session, token}) {
+            session.user.accessToken = token.accessToken,
+            session.user.refreshToken = token.refreshToken,
+            session.user.username = token.username
+            return session;
         }
     }
 })
