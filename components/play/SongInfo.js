@@ -2,9 +2,11 @@ import React from 'react'
 import { truncate } from 'lodash'
 import { HeartIcon } from '@heroicons/react/outline'
 
-const SongInfo = ({ songInfo }) => {
+const SongInfo = ({ songInfo, isPlaying }) => {
     return (
-        <div className="flex items-center">
+        <div className="flex items-center w-[30%]">
+        {isPlaying && 
+            <>
             <img 
                 src={songInfo?.album?.images[0]?.url} 
                 className="w-14 h-14 mr-3" 
@@ -16,6 +18,8 @@ const SongInfo = ({ songInfo }) => {
                 </p>
             </div>
             <HeartIcon className="h-[18px] w-[18px] text-gray-400 ml-3" />
+            </>
+        }
         </div>
     )
 }

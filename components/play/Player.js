@@ -5,7 +5,7 @@ import { currentSongIdState, isPlayingState } from '../../atoms/songAtom'
 import useSongInfo from '../../hooks/useSongInfo'
 import useSpotify from '../../hooks/useSpotify'
 import PlayAction from './PlayAction'
-// import PlayTools from './PlayTools'
+import PlayTools from './PlayTools'
 import SongInfo from './SongInfo'
 
 const Player = () => {
@@ -40,10 +40,20 @@ const Player = () => {
     }, [currentSongIdState, spotifyApi, session])
 
     return (
-        <div className="grid grid-cols-3 px-4 h-[90px] bg-[#181818] border-b-[1px] border-[#282828]">
-            <SongInfo songInfo={songInfo} />
-            <PlayAction songInfo={songInfo}/>
-            {/* <PlayTools isPlaying={isPlaying} /> */}
+        <div className="flex items-center px-4 h-[90px] bg-[#181818] border-b-[1px] border-[#282828]">
+            <SongInfo 
+                songInfo={songInfo}
+                isPlaying={isPlaying}
+            />
+            <PlayAction 
+                isPlaying={isPlaying} 
+                setIsPlaying={setIsPlaying}
+                songInfo={songInfo}
+            />
+            <PlayTools 
+                volume={volume}
+                setVolume={setVolume}
+            />
         </div>
     )
 }
