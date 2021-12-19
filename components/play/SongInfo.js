@@ -4,7 +4,7 @@ import { HeartIcon } from '@heroicons/react/outline'
 
 const SongInfo = ({ songInfo }) => {
     return (
-        <div className="flex items-center justify-between">
+        <div className="flex items-center">
             <img 
                 src={songInfo?.album?.images[0]?.url} 
                 className="w-14 h-14 mr-3" 
