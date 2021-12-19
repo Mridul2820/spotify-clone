@@ -15,9 +15,9 @@ const Song = ({ track, order, added_at }) => {
     const playSong = () => {
         setCurrentTrackId(track.id)
         setIsPlaying(true)
-        spotifyApi.play({
-            uris: [track.uri]
-        })
+        // spotifyApi.play({
+        //     uris: [track.uri]
+        // })
     }
 
     return (

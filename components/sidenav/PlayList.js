@@ -21,12 +21,12 @@ const PlayList = () => {
     // console.log("playlists", playlists)
 
     return (
-        <div className="space-y-4 ml-5 pb-5 h-[calc(100vh-274px)] overflow-y-scroll scrollbar-hide">
-            <p className="cursor-pointer hover:text-white" onClick={() => signOut()}>Your</p>
+        <div className="space-y-4 ml-5  pb-28 h-[calc(100vh-274px)] overflow-y-scroll scrollbar-hide">
+            <p className="cursor-pointer text-[#b3b3b3] hover:text-white" onClick={() => signOut()}>Logout</p>
             {playlists.map(playlist => (
                 <p 
                     key={playlist.id} 
-                    onClick={() => setPlaylistId(playlist.id)}className="cursor-pointer hover:text-white"
+                    onClick={() => setPlaylistId(playlist.id)}className="text-[#b3b3b3] cursor-pointer hover:text-white"
                 >
                     {playlist.name}
                 </p>

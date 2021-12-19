@@ -7,7 +7,7 @@ import Song from './Song'
 const Songs = () => {
     const playlist = useRecoilValue(playlistState)
 
-    console.log(playlist);
+    // console.log(playlist);
 
     return (
         <div className="px-5 flex flex-col space-y-1 pb-28 text-white bg-[#121212]">
