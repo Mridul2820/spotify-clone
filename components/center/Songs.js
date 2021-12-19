@@ -1,8 +1,8 @@
 import React from 'react'
 import { useRecoilValue } from 'recoil'
 import { playlistState } from '../../atoms/playlistAtom'
-import { ClockIcon } from  '@heroicons/react/outline'
 import Song from './Song'
+import { FiClock } from 'react-icons/fi'
 
 const Songs = () => {
     const playlist = useRecoilValue(playlistState)
@@ -16,7 +16,7 @@ const Songs = () => {
                 <span className="text-[13px]">TITLE</span>
                 <span className="text-[13px] hidden md:block">ALBUM</span>
                 <span className="text-[13px] hidden md:block">DATE ADDED</span>
-                <span><ClockIcon className="h-4 w-4"/></span>
+                <span><FiClock className="h-4 w-4"/></span>
             </div>
             {playlist?.tracks.items.map((track, i) => (
                 <Song 

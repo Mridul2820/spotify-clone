@@ -1,6 +1,6 @@
 import React from 'react'
 import { truncate } from 'lodash'
-import { HeartIcon } from '@heroicons/react/outline'
+import { AiOutlineHeart } from 'react-icons/ai'
 
 const SongInfo = ({ songInfo, isPlaying }) => {
     return (
@@ -17,7 +17,7 @@ const SongInfo = ({ songInfo, isPlaying }) => {
                 {truncate(songInfo.artists?.map(artist => {return artist.name}).join(", "))}
                 </p>
             </div>
-            <HeartIcon className="h-[18px] w-[18px] text-gray-400 ml-3" />
+            <AiOutlineHeart className="h-[18px] w-[18px] text-gray-400 ml-3" />
             </>
         }
         </div>
