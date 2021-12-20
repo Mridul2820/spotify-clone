@@ -12,3 +12,6 @@
 - Get the current playing song in spotify in the app
 - Play or Pause your spotify player from this app (Premium account Required)
 - Control sound and it will reflect in your spotify account
+
+## APP Preview
+<img src="/public/assets/app-screenshot.png" alt="App Preview"/>
