@@ -1,9 +1,11 @@
 import { getToken } from "next-auth/jwt";
 import { NextResponse } from "next/server";
 
+const { JWT_SECRET } = process.env
+
 export async function middleware(req){
     // Token will exist if user logged in
-    const token = await getToken({ req, secret: process.env.JWT_SECRET })
+    const token = await getToken({ req, secret: JWT_SECRET })
 
     const { pathname } = req.nextUrl
     // console.log(pathname);
