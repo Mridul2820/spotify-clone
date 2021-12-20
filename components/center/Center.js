@@ -15,13 +15,13 @@ const Center = () => {
     const [ playlist, setPlaylist ] = useRecoilState(playlistState)
 
     const colors = [
-        "from-indigo-500",
-        "from-blue-500",
-        "from-green-500",
-        "from-red-500",
-        "from-yellow-500",
-        "from-pink-500",
-        "from-purple-500"
+        "#6366f1",
+        "#3b82f6",
+        "#22c55e",
+        "#ef4444",
+        "#eab308",
+        "#ec4899",
+        "#a855f7"
     ]
 
     useEffect(() => {
@@ -36,7 +36,11 @@ const Center = () => {
     }, [playlistId])
 
     return (
-        <CenterScroll className={`center-main flex-grow text-white h-[100vh] overflow-y-scroll  to-[#121212] ${color}`}>
+        <CenterScroll 
+            id="center-main" 
+            className="flex-grow text-white overflow-y-scroll h-[calc(100vh-90px)]"
+            color={color}
+        >
             <CenterTop 
                 playlist={playlist}
                 color={color}
@@ -51,6 +55,7 @@ const Center = () => {
 }
 
 const CenterScroll = styled.div`
+    background: ${({color}) => color && "linear-gradient(to top, #121212," + color + ")"};
     scrollbar-width: 12px;
     scrollbar-color: rgba(255,255,255,.3) #121212;
 
