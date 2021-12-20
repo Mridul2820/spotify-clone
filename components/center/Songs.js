@@ -10,8 +10,8 @@ const Songs = () => {
     // console.log(playlist);
 
     return (
-        <div className="px-5 flex flex-col space-y-1 pb-28 text-white bg-[#121212]">
-            <div className="grid gap-4 grid-cols-gridsongsm md:grid-cols-gridsong items-center px-0 sm:px-3 mb-4 pb-2 text-gray-400 border-b-[1px] border-gray-600 tracking-wider">
+        <div className="px-5 flex flex-col space-y-1 text-white bg-[#121212]">
+            <div className="grid gap-4 grid-cols-gridsongsm md:grid-cols-gridsong items-center sticky top-[60px] bg-[#121212] px-0 sm:px-3 mb-4 py-2 text-gray-400 border-b-[1px] border-gray-600 tracking-wider">
                 <span className="text-[16px] hidden md:block">#</span>
                 <span className="text-[13px]">TITLE</span>
                 <span className="text-[13px] hidden md:block">ALBUM</span>
@@ -26,6 +26,7 @@ const Songs = () => {
                     added_at={track.added_at}
                 />
             ))}
+            <div className="h-[90px]" />
         </div>
     )
 }

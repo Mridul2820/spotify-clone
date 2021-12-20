@@ -1,42 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import { shuffle } from 'lodash'
-import { useRecoilState, useRecoilValue } from 'recoil';
-import { playlistState, playlistIdState } from '../../atoms/playlistAtom';
-import useSpotify from '../../hooks/useSpotify';
+import React from 'react'
 
-const CenterMain = () => {
-    const [color, setColor] = useState(null);
-    const spotifyApi = useSpotify()
-    const playlistId = useRecoilValue(playlistIdState)
-    const [ playlist, setPlaylist ] = useRecoilState(playlistState)
-
-    const colors = [
-        "from-indigo-500",
-        "from-blue-500",
-        "from-green-500",
-        "from-red-500",
-        "from-yellow-500",
-        "from-pink-500",
-        "from-purple-500"
-    ]
-
-    useEffect(() => {
-        setColor(shuffle(colors).pop())
-    }, [playlistId])
-
-    useEffect(() => {
-        if(spotifyApi.getAccessToken()){
-            spotifyApi.getPlaylist(playlistId)
-            .then(({body}) => setPlaylist(body))
-        }
-    }, [playlistId])
-
+const CenterMain = ({ color, playlist }) => {
     return (
-        <section className={`flex items-end space-x-7 bg-gradient-to-b to-[#121212] ${color} h-80 text-white p-8`}>
+        <section className={`flex items-end space-x-7 bg-gradient-to-b text-white p-8 h-[30vh] max-h-[500px] min-h-[340px]`}>
             <img 
                 src={playlist?.images[0]?.url} 
                 alt={playlist?.name} 
-                className="h-56 w-56 shadow-2xl"
+                className="h-48 w-48 shadow-2xl"
             />
             <div>
                 <h2 className="text-[13px]">PLAYLIST</h2>

@@ -20,7 +20,7 @@ const PlayList = () => {
     }, [session, spotifyApi])
 
     return (
-        <PlaylistScroll className="space-y-4 ml-5 pb-5 pt-5 h-[calc(100vh-274px)] overflow-y-scroll">
+        <PlaylistScroll className="space-y-4 pl-5 pb-2 pt-5 h-[calc(100vh-274px)] overflow-y-scroll">
             <p className="cursor-pointer text-[#b3b3b3] hover:text-white" onClick={() => signOut()}>Logout</p>
             {playlists.map(playlist => (
                 <p 
@@ -30,14 +30,13 @@ const PlayList = () => {
                     {playlist.name}
                 </p>
             ))}
-            
         </PlaylistScroll>
     )
 }
 
 const PlaylistScroll = styled.div`
     scrollbar-width: 11px;
-    scrollbar-color: #d32f2f transparent;
+    scrollbar-color: rgba(255,255,255,.3) transparent;
 
     &::-webkit-scrollbar {
         width: 11px;
@@ -48,7 +47,7 @@ const PlaylistScroll = styled.div`
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color: #d32f2f;
+        background-color: rgba(255,255,255,.3);
     }
 `
 
