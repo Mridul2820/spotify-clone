@@ -1,8 +1,12 @@
 import React from 'react'
+import styled from 'styled-components'
 
 const CenterMain = ({ color, playlist }) => {
     return (
-        <section className={`flex items-end space-x-7 bg-gradient-to-b text-white p-8 h-[30vh] max-h-[500px] min-h-[340px]`}>
+        <CenterHead 
+            className={`flex items-end space-x-7 bg-gradient-to-b text-white p-8 h-[30vh] max-h-[500px] min-h-[340px]`}
+            color={color}
+        >
             <img 
                 src={playlist?.images[0]?.url} 
                 alt={playlist?.name} 
@@ -33,8 +37,12 @@ const CenterMain = ({ color, playlist }) => {
                     }
                 </div>
             </div>
-        </section>
+        </CenterHead>
     )
 }
+
+const CenterHead = styled.section`
+    background: ${({color}) => color && "linear-gradient(to top, #121212," + color + ")"};
+`
 
 export default CenterMain

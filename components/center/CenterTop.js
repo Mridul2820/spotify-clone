@@ -15,7 +15,7 @@ const CenterTop = ({ color, playlist }) => {
     const [showNav, setShowNav] = useState(false)
 
     const showNavBar = () => {
-        if( typeof document !== "undefined" && document.getElementById('center-main').scrollTop >= 340) {
+        if( typeof document !== "undefined" && document.getElementById('center-main').scrollTop >= 300) {
             setShowNav(true)
         }
         else {

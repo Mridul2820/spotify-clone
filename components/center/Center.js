@@ -39,7 +39,6 @@ const Center = () => {
         <CenterScroll 
             id="center-main" 
             className="flex-grow text-white overflow-y-scroll h-[calc(100vh-90px)]"
-            color={color}
         >
             <CenterTop 
                 playlist={playlist}
@@ -55,7 +54,6 @@ const Center = () => {
 }
 
 const CenterScroll = styled.div`
-    background: ${({color}) => color && "linear-gradient(to top, #121212," + color + ")"};
     scrollbar-width: 12px;
     scrollbar-color: rgba(255,255,255,.3) #121212;
 

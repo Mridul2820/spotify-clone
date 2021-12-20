@@ -10,7 +10,7 @@ const Songs = () => {
     // console.log(playlist);
 
     return (
-        <div className="px-5 flex flex-col pb-4 space-y-1 text-white bg-[#121212]">
+        <div className="px-5 flex flex-col pb-4 space-y-1 text-white bg-[#121212] min-h-[50vh]">
             <div className="grid gap-4 grid-cols-gridsongsm md:grid-cols-gridsong items-center sticky top-16 bg-[#121212] px-0 sm:px-3 mb-4 py-2 text-gray-400 border-b-[1px] border-gray-600 tracking-wider">
                 <span className="text-[16px] hidden md:block">#</span>
                 <span className="text-[13px]">TITLE</span>
