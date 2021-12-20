@@ -4,7 +4,7 @@ import TopBar from './TopBar'
 
 const SideBar = () => {
     return (
-        <div className="text-gray-500 text-sm border-r border-gray-900 h-screen pr-5 sm:max-w-[12rem] lg:max-w-[15rem] min-w-[14rem] hidden md:inline-flex flex-col">
+        <div className="text-gray-500 text-sm border-r border-gray-900 h-screen sm:max-w-[12rem] lg:max-w-[15rem] min-w-[14rem] hidden md:inline-flex flex-col">
             <TopBar />
             <PlayList/>
         </div>

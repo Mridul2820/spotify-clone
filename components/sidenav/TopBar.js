@@ -6,7 +6,7 @@ import { AiOutlineHeart, AiOutlinePlusCircle } from 'react-icons/ai'
 
 const TopBar = () => {
     return (
-        <div className="space-y-4 p-5 pr-0 text-[#b3b3b3]">
+        <div className="space-y-4 pt-5 pr-5 pl-4 text-[#b3b3b3]">
             <button className="flex items-center space-x-2 hover:text-white">
                 <CgHome className="h-5 w-5" />
                 <p>Home</p>

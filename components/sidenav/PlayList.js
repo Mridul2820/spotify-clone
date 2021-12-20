@@ -1,6 +1,7 @@
 import { signOut, useSession } from 'next-auth/react'
 import React, { useEffect, useState } from 'react'
 import { useRecoilState } from 'recoil'
+import styled from 'styled-components'
 import { playlistIdState } from '../../atoms/playlistAtom'
 import useSpotify from '../../hooks/useSpotify'
 
@@ -18,10 +19,8 @@ const PlayList = () => {
         }
     }, [session, spotifyApi])
 
-    // console.log("playlists", playlists)
-
     return (
-        <div className="space-y-4 ml-5  pb-28 h-[calc(100vh-274px)] overflow-y-scroll scrollbar-hide">
+        <PlaylistScroll className="space-y-4 ml-5 pb-5 pt-5 h-[calc(100vh-274px)] overflow-y-scroll">
             <p className="cursor-pointer text-[#b3b3b3] hover:text-white" onClick={() => signOut()}>Logout</p>
             {playlists.map(playlist => (
                 <p 
@@ -32,8 +31,25 @@ const PlayList = () => {
                 </p>
             ))}
             
-        </div>
+        </PlaylistScroll>
     )
 }
+
+const PlaylistScroll = styled.div`
+    scrollbar-width: 11px;
+    scrollbar-color: #d32f2f transparent;
+
+    &::-webkit-scrollbar {
+        width: 11px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #d32f2f;
+    }
+`
 
 export default PlayList
