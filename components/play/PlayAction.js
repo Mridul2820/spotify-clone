@@ -14,7 +14,7 @@ const PlayAction = ({ songInfo, isPlaying, setIsPlaying }) => {
     const PlayPause = async() => {
         if(spotifyApi.getAccessToken()){
             const status = await spotifyApi.getMyCurrentPlaybackState()
-            if(status.body.is_playing){
+            if(status.body?.is_playing){
                 setIsPlaying(false)
                 spotifyApi.pause();
             }
