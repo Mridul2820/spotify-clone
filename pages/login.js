@@ -15,7 +15,7 @@ const Login = ({ providers }) => {
                 className="h-40 mb-5"
             />
 
-            {Object.values(providers).map(provider => (
+            {providers &&  providers.length && Object.values(providers).map(provider => (
                 <button 
                     key={provider.id}
                     className="bg-[#18d860] text-white px-5 py-2"
